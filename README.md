@@ -9,7 +9,9 @@ Authors: Muhammad Kabiru Nata’ala, Anderson P. Avila Santos, Jonas Coelho Kasm
 
 Scripts for assigning ocean/sea names and maritime regions to sample coordinates using spatial joins with global marine shapefiles (GOaS and EEZ–IHO). Enables standardized geographic annotation for downstream analyses.
 
+## 02_Distribution_of_metagenomes.R
 
+R script for generating publication-ready figures summarizing marine MAG libraries, including pie charts of salinity/temperature/depth categories, bar plots of ocean/sea/IHO/marine region/territory distributions, and a global map of sample locations colored by genome source (MarMAGs, GEM catalog, OceanDNA).
 
 
 
