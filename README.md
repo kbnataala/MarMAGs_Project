@@ -21,10 +21,9 @@ R script for quantifying and visualizing metadata missingness in the MarMAGs dat
 
 R script for comparing genome quality metrics (CheckM completeness, contamination, strain heterogeneity, and quality score) across genome sources (MarMAGs, GEM catalog, OceanDNA), using Levene’s tests, Welch ANOVA, pairwise Welch t-tests, and generating violin/box plots with significance annotations plus a combined multi-panel figure.
 
+## 05_05_Multivariate_biogeography_of_all_and_carbon_fixing_phyla.R
 
-
-
-
+R script for testing and visualizing the biogeographic structure of marine prokaryotes and carbon-fixing phyla across environmental gradients and regions. The workflow builds phylum-by-sample presence matrices, fits mvabund manyGLM models for depth, salinity, temperature, oceans and IHO seas, and exports multivariate and univariate ANOVA summaries. It also produces publication grade clustered heatmaps of pathway and CBB presence by phylum and region/gradient to summarize community turnover in environmental and geographic space.
 
 ## 06_Correlation_analysis.R
 
