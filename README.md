@@ -13,6 +13,32 @@ Scripts for assigning ocean/sea names and maritime regions to sample coordinates
 
 R script for generating publication-ready figures summarizing marine MAG libraries, including pie charts of salinity/temperature/depth categories, bar plots of ocean/sea/IHO/marine region/territory distributions, and a global map of sample locations colored by genome source (MarMAGs, GEM catalog, OceanDNA).
 
+## 03_Percentage_of_missingness_metadata.R
+
+R script for quantifying and visualizing metadata missingness in the MarMAGs dataset, generating a field-wise bar plot (percentage of missing values per metadata field) and a flipped sample × field missingness heatmap with automatic sizing for large tables.
+
+## 04_Metagenome-assembled-genomes_quality_metrics.R
+
+R script for comparing genome quality metrics (CheckM completeness, contamination, strain heterogeneity, and quality score) across genome sources (MarMAGs, GEM catalog, OceanDNA), using Levene’s tests, Welch ANOVA, pairwise Welch t-tests, and generating violin/box plots with significance annotations plus a combined multi-panel figure.
+
+
+
+
+
+
+## 06_Correlation_analysis.R
+
+R workflow for gradient-based co-occurrence analysis of all MAGs accross the different phyla and CBB encoding MAGs in each phyla across temperature, depth, and salinity, building presence–absence matrices, testing monotonicity, computing smoothed (σ = 8) curve correlations with circular-shift permutation + FDR, and generating heatmaps / multi-panel figures for significant phylum–phylum associations and top-50 networks.
+
+
+
+
+
+
+
+
+
+
 
 
 
