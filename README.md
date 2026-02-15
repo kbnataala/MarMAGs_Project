@@ -113,16 +113,21 @@ This ensures transparency and traceability.
 
 ## Analysis Workflow
 
-Scripts are organised sequentially:
+This repository starts from curated processed tables located in `data/processed/`.  
+Each script operates independently on its own input table(s) and performs local input checks before running.
 
-1. `01_mag_characterization.R`
-2. `02_carbon_fixation.R`
-3. `03_phylogenetic_analysis.R`
-4. `04_biogeography.R`
-5. `05_statistical_analysis.R`
-6. `06_figures_main.R`
+Scripts are organised logically according to the manuscript structure:
+
+1. `01_mag_characterization.R`  
+2. `02_carbon_fixation.R`  
+3. `03_phylogenetic_analysis.R`  
+4. `04_biogeography.R`  
+5. `05_statistical_analysis.R`  
+6. `06_figures_main.R`  
 
 Each script writes outputs to the `results/` and `figures/` directories.
+
+Scripts can be run independently if the required processed input tables are present.
 
 ---
 
