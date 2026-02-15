@@ -1,0 +1,13 @@
+# Shapefiles (large external data)
+data/shapefiles/
+
+# Processed outputs
+data/processed/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# R session files
+.Rhistory
+.RData
