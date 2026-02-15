@@ -145,9 +145,9 @@ Analyses were conducted using:
 
 Exact software versions are documented in:
 
-``
+
 docs/SOFTWARE_VERSIONS.md
-```
+
 
 ## Web Application
 
