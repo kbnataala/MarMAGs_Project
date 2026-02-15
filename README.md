@@ -49,22 +49,21 @@ Habitat filtering constrained by evolutionary history shapes the assembly of mar
 
 ## Reproducibility Scope
 
-### Reproducible from this repository
+###Included in this repository
+ - Final curated processed tables used for manuscript analyses
+ - Statistical analysis templates
+ - Figure-generation scripts
+ - Documentation of analytical steps
+ - Command templates for upstream genome characterization
 
-- Statistical analyses (manyGLM, prevalence tests, correlation analyses, t-tests)
-- NRI and NTI calculations using curated phylogenetic subsets
-- Environmental gradient binning and prevalence calculations
-- All manuscript figures
-- Final result tables
+###Not included
+ - Raw sequencing reads
+ - MAG assembly and binning workflows
+ - Large intermediate HPC outputs
+ - Phylogenetic tree reconstruction from raw genomes
+ - GTDB reference databases
 
-### Not reproducible from this repository alone
-
-- Raw sequencing read download
-- MAG assembly and binning workflows
-- Large intermediate HPC outputs
-- Full phylogenetic reconstruction from raw genomes
-
-Upstream workflows are documented in the `pipeline_reconstruction/` directory but require external data and computational resources.
+Upstream workflows are described in pipeline_reconstruction/ but require external data and computational resources.
 
 ---
 
@@ -73,45 +72,37 @@ Upstream workflows are documented in the `pipeline_reconstruction/` directory bu
 ```
 MarMAGs_Project/
 ├── README.md
-├── data/
-│   ├── raw/                  # Pointer directory (raw data not hosted)
-│   ├── processed/            # Curated analytical datasets used in analysis
-│   └── metadata/             # Harmonised environmental/sample metadata
-├── scripts/                  # Sequential analysis scripts
-├── figures/                  # Generated figures (main + supplementary)
-├── results/                  # Statistical outputs and summary tables
-├── environment/              # R and Python dependency documentation
-├── docs/                     # Manual curation log + data dictionary
-└── pipeline_reconstruction/  # Documented upstream workflow from Methods
-```
-
----
-
-## Data Description
-
-### Raw Data  
-Raw sequencing reads originate from public marine metagenomes (e.g., SRA). These are not redistributed here due to size and infrastructure constraints.
-
-See `data/raw/README.md` for acquisition guidance.
-
-### Processed Data  
-All analyses begin from curated processed datasets located in:
+├── results/
+│   ├── tables/                 # Final curated manuscript tables
+│   ├── supplementary_tables/   # Supplementary tables (if included)
+│   └── figures/                # Final manuscript figures
+├── scripts/
+│   ├── figures/                # Figure-generation templates
+│   └── analysis_templates/     # Statistical analysis examples
+├── pipeline_reconstruction/
+│   └── mag_characterization/   # CheckM / GTDB-Tk / BBTools command templates
+├── docs/
+│   ├── DATA_OVERVIEW.md
+│   ├── SOFTWARE_VERSIONS.md
+│   ├── MANUAL_CURATION_LOG.md
+│   └── WORKFLOW_SUMMARY.md
+└── environment/
+    └── R_packages.txt
 
 ```
-data/processed/
-```
 
-Some processed tables were manually harmonised (e.g., column renaming, label standardisation, matrix formatting). All modifications are documented in:
+## Processed Data
+All manuscript analyses begin from curated processed datasets used to generate final statistical outputs and figures. These are included in:
 
-```
+results/tables/
+
+Some tables were manually harmonised (e.g., column renaming, label standardisation, matrix formatting). All modifications are documented in:
+
 docs/MANUAL_CURATION_LOG.md
-```
-
-This ensures transparency and traceability.
 
 ---
 
-## Analysis Workflow
+## Analysis Documentation
 
 This repository starts from curated processed tables located in `data/processed/`.  
 Each script operates independently on its own input table(s) and performs local input checks before running.
@@ -125,68 +116,50 @@ Scripts are organised logically according to the manuscript structure:
 5. `05_statistical_analysis.R`  
 6. `06_figures_main.R`  
 
-Each script writes outputs to the `results/` and `figures/` directories.
+These scripts document the analytical approach used in the manuscript.
+They may require adaptation depending on local paths and software environments.
 
-Scripts can be run independently if the required processed input tables are present.
+## Upstream Genome Characterization
 
----
+The directory:
 
-## Quick Start
+pipeline_reconstruction/mag_characterization/
 
-Clone the repository:
+contains command templates reconstructing:
+ - CheckM quality assessment
+ - GTDB-Tk taxonomy assignment (release 220)
+ - BBTools genome metrics
+ - Quality Score calculation (QS ≥ 50 threshold)
 
-```bash
-git clone https://github.com/kbnataala/MarMAGs_Project.git
-cd MarMAGs_Project
-```
-
-Install R dependencies:
-
-```r
-source("environment/install_packages.R")
-```
-
-Run the reproducible subset:
-
-```r
-source("run_all.R")
-```
-
-Outputs will be written to:
-
-- `results/`
-- `figures/`
-
----
+These scripts are provided for methodological transparency and require external data and HPC resources.
 
 ## Software Environment
 
 Analyses were conducted using:
+ - R ≥ 4.3
+ - Key packages: tidyverse, vegan, ape, phangorn, ggtree, mvabund, picante
+ - Python (for geospatial processing and data integration)
+ - CheckM
+ - GTDB-Tk v2.4.0
+ - BBTools
 
-- R ≥ 4.3
-- Key packages: tidyverse, vegan, ape, phangorn, ggtree, mvabund, picante
-- Python (for geospatial processing and web application components)
+Exact software versions are documented in:
 
-Exact package versions are listed in:
-
+``
+docs/SOFTWARE_VERSIONS.md
 ```
-environment/R_packages.txt
-```
-
----
 
 ## Web Application
 
 The MarMAGs interactive web application allows users to:
+ - Filter MAGs by taxonomy, quality metrics, and environmental attributes
+ - Query carbon fixation pathways and gene presence
+ - Visualise geographic distributions
+ - Download filtered datasets
 
-- Filter MAGs by taxonomy, quality metrics, and environmental attributes
-- Query carbon fixation pathways and gene presence
-- Visualise geographic distributions
-- Download filtered datasets
+Access:
 
-Access: https://webapp.ufz.de/marmags/
-
----
+https://webapp.ufz.de/marmags/
 
 ## Citation
 
