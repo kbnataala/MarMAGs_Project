@@ -115,13 +115,12 @@ This ensures transparency and traceability.
 
 Scripts are organised sequentially:
 
-1. `01_data_preprocessing.R`
-2. `02_mag_characterization.R`
-3. `03_carbon_fixation.R`
-4. `04_phylogenetic_analysis.R`
-5. `05_biogeography.R`
-6. `06_statistical_analysis.R`
-7. `07_figures_main.R`
+1. `02_mag_characterization.R`
+2. `03_carbon_fixation.R`
+3. `04_phylogenetic_analysis.R`
+4. `05_biogeography.R`
+5. `06_statistical_analysis.R`
+6. `07_figures_main.R`
 
 Each script writes outputs to the `results/` and `figures/` directories.
 
