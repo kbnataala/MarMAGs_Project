@@ -11,3 +11,6 @@ __pycache__/
 # R session files
 .Rhistory
 .RData
+
+~$*
+*.tmp
