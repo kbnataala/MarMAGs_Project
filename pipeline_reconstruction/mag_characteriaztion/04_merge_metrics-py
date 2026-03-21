@@ -1,0 +1,115 @@
+#!/usr/bin/env python3
+import argparse
+import os
+import pandas as pd
+
+def parse_gtdb_taxonomy(tax: str) -> dict:
+    # GTDB format: d__Bacteria;p__...;c__...;o__...;f__...;g__...;s__...
+    ranks = {"domain": None, "phylum": None, "class": None, "order": None, "family": None, "genus": None, "species": None}
+    if pd.isna(tax) or not str(tax).strip():
+        return ranks
+    parts = str(tax).split(";")
+    for p in parts:
+        p = p.strip()
+        if p.startswith("d__"): ranks["domain"] = p[3:]
+        elif p.startswith("p__"): ranks["phylum"] = p[3:]
+        elif p.startswith("c__"): ranks["class"] = p[3:]
+        elif p.startswith("o__"): ranks["order"] = p[3:]
+        elif p.startswith("f__"): ranks["family"] = p[3:]
+        elif p.startswith("g__"): ranks["genus"] = p[3:]
+        elif p.startswith("s__"): ranks["species"] = p[3:]
+    return ranks
+
+def detect_gtdb_cols(df: pd.DataFrame):
+    # handle common GTDB-Tk summary formats
+    genome_col = None
+    tax_col = None
+    for c in ["user_genome", "genome", "bin_id", "Bin Id", "mag_id"]:
+        if c in df.columns:
+            genome_col = c
+            break
+    for c in ["classification", "taxonomic_classification", "gtdb_taxonomy", "taxonomy"]:
+        if c in df.columns:
+            tax_col = c
+            break
+    if genome_col is None or tax_col is None:
+        raise ValueError(f"Could not detect genome/taxonomy columns in GTDB file. Columns={list(df.columns)}")
+    return genome_col, tax_col
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--checkm", required=True, help="CheckM output TSV (tab-separated) with Completeness/Contamination")
+    ap.add_argument("--bbtools", required=True, help="BBTools statswrapper output TSV (tab-separated)")
+    ap.add_argument("--gtdb", required=True, help="Merged gtdbtk_result.tsv (tab-separated)")
+    ap.add_argument("--outdir", default="results/mag_characterization/merged", help="Output directory")
+    ap.add_argument("--qs_cutoff", type=float, default=50.0, help="QS cutoff for defining MAGs")
+    args = ap.parse_args()
+
+    os.makedirs(args.outdir, exist_ok=True)
+
+    # ---- CheckM ----
+    checkm = pd.read_csv(args.checkm, sep="\t")
+    # Expected columns per your example: Bin Id, Completeness, Contamination, Strain heterogeneity
+    for col in ["Bin Id", "Completeness", "Contamination"]:
+        if col not in checkm.columns:
+            raise ValueError(f"Missing '{col}' in CheckM file. Columns={list(checkm.columns)}")
+    checkm = checkm.rename(columns={
+        "Bin Id": "mag_id",
+        "Completeness": "completeness",
+        "Contamination": "contamination",
+        "Strain heterogeneity": "strain_heterogeneity"
+    })
+
+    # ---- BBTools ----
+    bb = pd.read_csv(args.bbtools, sep="\t")
+    # Expected columns per your example: scaf_bp, scaf_N50, n_scaffolds, gc_avg, filename, etc.
+    if "filename" not in bb.columns:
+        raise ValueError(f"Missing 'filename' in BBTools file. Columns={list(bb.columns)}")
+    bb["mag_id"] = bb["filename"].astype(str).apply(lambda p: os.path.splitext(os.path.basename(p))[0])
+
+    # Normalize to useful columns
+    bb_keep = {
+        "scaf_bp": "genome_size_bp",
+        "n_scaffolds": "n_scaffolds",
+        "scaf_N50": "n50",
+        "scaf_N90": "n90",
+        "gc_avg": "gc"
+    }
+    missing_bb = [c for c in bb_keep.keys() if c not in bb.columns]
+    if missing_bb:
+        # keep what exists, but warn
+        print(f"Warning: BBTools columns missing and will be NA: {missing_bb}")
+    bb2 = bb[["mag_id"] + [c for c in bb_keep.keys() if c in bb.columns]].rename(columns=bb_keep)
+
+    # ---- GTDB ----
+    gtdb = pd.read_csv(args.gtdb, sep="\t")
+    genome_col, tax_col = detect_gtdb_cols(gtdb)
+    gtdb = gtdb.rename(columns={genome_col: "mag_id", tax_col: "gtdb_taxonomy"})[["mag_id", "gtdb_taxonomy"]].copy()
+
+    # Split ranks
+    ranks = gtdb["gtdb_taxonomy"].apply(parse_gtdb_taxonomy).apply(pd.Series)
+    gtdb_tax = pd.concat([gtdb[["mag_id"]], ranks], axis=1)
+
+    # ---- Merge ----
+    m = checkm.merge(bb2, on="mag_id", how="left").merge(gtdb_tax, on="mag_id", how="left")
+
+    # Quality Score QS = completeness - 5*contamination (per MuDoGeR module + Methods)
+    m["QS"] = m["completeness"] - (5.0 * m["contamination"])
+    m["is_mag_qs50"] = m["QS"] >= args.qs_cutoff
+
+    # Write outputs
+    meta_path = os.path.join(args.outdir, "mag_metadata.tsv")
+    tax_path = os.path.join(args.outdir, "mag_taxonomy.tsv")
+    mags_path = os.path.join(args.outdir, "mags_qs50.tsv")
+
+    m.to_csv(meta_path, sep="\t", index=False)
+    gtdb_tax.to_csv(tax_path, sep="\t", index=False)
+    m.loc[m["is_mag_qs50"], ["mag_id", "QS"]].to_csv(mags_path, sep="\t", index=False)
+
+    print("Wrote:")
+    print(" -", meta_path)
+    print(" -", tax_path)
+    print(" -", mags_path)
+
+if __name__ == "__main__":
+    main()
