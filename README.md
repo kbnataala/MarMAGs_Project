@@ -4,7 +4,7 @@
 
 ## Overview
 
-This repository contains all analysis code, curated processed datasets, and figure-generation workflows supporting the manuscript:
+This repository contains analysis code, curated processed datasets, and figure-generation workflows supporting the manuscript:
 
 **Title**: An analysis of almost 135 thousand metagenome-assembled genomes indicated that habitat filtering constrained by evolutionary history drives the assemblage of carbon-fixing species in marine systems 
 
