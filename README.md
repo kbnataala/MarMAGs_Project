@@ -6,10 +6,10 @@
 
 This repository contains all analysis code, curated processed datasets, and figure-generation workflows supporting the manuscript:
 
-**Title**: Habitat filtering constrained by evolutionary history drives the assemblage of carbon-fixing species in marine systems  
-**Authors**: Muhammad Kabiru Nata’ala et al.  
-**Corresponding Author**: Ulisses Rocha  
-**Journal**: [To be updated upon publication]  
+**Title**: An analysis of almost 135 thousand metagenome-assembled genomes indicated that habitat filtering constrained by evolutionary history drives the assemblage of carbon-fixing species in marine systems 
+**Authors**: Muhammad Kabiru Nataala1, Anderson P. Avila Santos, Jonas Coelho Kasmanas, Breno, Eriik Borchert, Jan Zarzycki, Newton C. M. Gomes, Rodrigo Costa, Tina Keller‑Costa, Mirjam perner, Marcel Niklausz, Sabine Kleinsteuber, Ivan A Berg, Tobias J. Erb, André de Carvalho, Peter F. Stadler, Ulisses Rocha1 
+**Corresponding Author**: Ulisses Rocha
+**Journal**: [To be updated upon publication]
 **DOI**: [To be updated upon publication]
 
 This study investigates the biogeographic distribution and phylogenetic structure of marine metagenome-assembled genomes (MAGs) encoding carbon fixation pathways. The project integrates large-scale genome recovery, functional annotation, phylogenomics, and ecological modeling to evaluate how evolutionary history and environmental gradients shape marine carbon-fixing microbial communities.
