@@ -8,7 +8,7 @@ This repository contains all analysis code, curated processed datasets, and figu
 
 **Title**: An analysis of almost 135 thousand metagenome-assembled genomes indicated that habitat filtering constrained by evolutionary history drives the assemblage of carbon-fixing species in marine systems 
 
-**Authors**: Muhammad Kabiru Nataala1, Anderson P. Avila Santos, Jonas Coelho Kasmanas, Breno, Eriik Borchert, Jan Zarzycki, Newton C. M. Gomes, Rodrigo Costa, Tina Keller‑Costa, Mirjam perner, Marcel Niklausz, Sabine Kleinsteuber, Ivan A Berg, Tobias J. Erb, André de Carvalho, Peter F. Stadler, Ulisses Rocha1 
+**Authors**: Muhammad Kabiru Nataala, Anderson P. Avila Santos, Jonas Coelho Kasmanas, Eriik Borchert, Jan Zarzycki, Newton C. M. Gomes, Rodrigo Costa, Tina Keller‑Costa, Mirjam perner, Marcel Niklausz, Sabine Kleinsteuber, Ivan A Berg, Tobias J. Erb, André de Carvalho, Peter F. Stadler, Ulisses Rocha 
 
 **Corresponding Author**: Ulisses Rocha
 
