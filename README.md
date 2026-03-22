@@ -106,22 +106,97 @@ docs/MANUAL_CURATION_LOG.md
 
 ---
 
+
 ## Analysis Documentation
 
-This repository starts from curated processed tables located in `data/processed/`.  
-Each script operates independently on its own input table(s) and performs local input checks before running.
+This repository is structured as a **documentation-oriented analysis archive** rather than a fully reproducible pipeline.
 
-Scripts are organised logically according to the manuscript structure:
+All analyses start from curated processed tables located in:
 
-1. `01_mag_characterization.R`  
-2. `02_carbon_fixation.R`  
-3. `03_phylogenetic_analysis.R`  
-4. `04_biogeography.R`  
-5. `05_statistical_analysis.R`  
-6. `06_figures_main.R`  
+```text
+data/processed/
+```
 
-These scripts document the analytical approach used in the manuscript.
-They may require adaptation depending on local paths and software environments.
+Scripts are designed as **independent documentation templates**, each representing a specific analytical component used in the manuscript. They are not intended to be executed sequentially as a single pipeline.
+
+---
+
+## Script Organisation
+
+Scripts are organised into two main categories:
+
+### 1. Analysis templates
+
+Located in:
+
+```text
+scripts/analysis_templates/
+```
+
+These scripts document the statistical and analytical methods used in the study, including:
+
+- multivariate ecological modeling (manyGLM)
+- prevalence analysis and pairwise statistical testing
+- phylogenetic structure metrics (NRI and NTI)
+- tree-size sensitivity analysis
+- environmental gradient statistical comparisons
+
+---
+
+### 2. Figure generation
+
+Located in:
+
+```text
+scripts/figures/
+```
+
+These scripts document how figures and visual summaries presented in the manuscript were generated, including:
+
+- metadata completeness summaries
+- MAG quality comparisons
+- biogeography heatmaps
+- correlation heatmaps
+- carbon fixation pathway visualizations
+- NRI/NTI environmental gradient plots
+- tree-reduction sensitivity figures
+
+---
+
+## Execution Philosophy
+
+Each script:
+
+- operates on specific input table(s)
+- performs its own local input checks
+- writes outputs to `results/tables/` or `results/figures/`
+- can be run independently if the required inputs are available
+
+There is **no required execution order**.
+
+---
+
+## Important Note
+
+These scripts are provided as:
+
+- documentation of analytical methods
+- templates illustrating how figures and results were generated
+
+They may require adaptation depending on:
+
+- local file paths
+- software environments
+- availability of input data
+
+The repository is intended to provide **transparency of analytical logic** rather than a fully automated end-to-end workflow.
+
+---
+
+## Script Naming Convention
+
+Scripts are prefixed numerically to reflect their conceptual order in the manuscript, but they are not dependent on one another.
+
 
 ## Upstream Genome Characterization
 
