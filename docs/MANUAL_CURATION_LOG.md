@@ -22,31 +22,6 @@ Examples of manual curation include:
 
 ---
 
-## Curation Table
-
-| File | Source / Upstream origin | Manual change | Reason |
-|------|---------------------------|---------------|--------|
-| results/tables/[example_file].csv | HPC-derived output / processed table | Renamed columns to more descriptive labels | Improve clarity and consistency |
-| results/supplementary_tables/[example_file].xlsx | Final formatted supplementary table | Adjusted title and reordered columns | Match manuscript presentation |
-| results/tables/[example_matrix].csv | Derived analysis matrix | Standardized category labels | Ensure consistency across figures |
-
----
-
-## Notes for Updating
-
-For each manually edited file, record:
-
-1. **File name**
-2. **Where it came from**
-3. **What was changed**
-4. **Why the change was made**
-
-This helps distinguish:
-- direct computational outputs
-- manually curated presentation-ready tables
-
----
-
 ## Current Status
 
 This log should be updated whenever:
