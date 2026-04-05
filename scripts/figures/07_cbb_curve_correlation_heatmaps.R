@@ -14,9 +14,9 @@
 #   - path/to/input/table
 #
 # Expected outputs:
-#   - results/figures/CBB_temperature_curvecorr_heatmap_sigma8.png
-#   - results/figures/CBB_depth_curvecorr_heatmap_sigma8.png
-#   - results/figures/CBB_salinity_curvecorr_heatmap_sigma8.png
+#   - results/figures/MarMAGs_Figure3.pdf (heamap_4b)
+#   - results/figures/MarMAGs_Figure3.pdf (heamap_4c)
+#   - results/figures/MarMAGs_Figure3.pdf (heamap_4d)
 ################################################################################
 
 suppressPackageStartupMessages({
