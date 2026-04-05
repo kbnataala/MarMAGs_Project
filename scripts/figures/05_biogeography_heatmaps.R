@@ -11,17 +11,19 @@
 #   pipeline component.
 #
 # Expected input:
-#   - results/tables/merged_data.csv
+#   - path/to/input/table
 #
 # Expected outputs:
-#   - results/figures/05_heatmap_temperature_all.svg
-#   - results/figures/05_heatmap_salinity_all.svg
-#   - results/figures/05_heatmap_depth_all.svg
-#   - results/figures/05_heatmap_ocean_all.svg
-#   - results/figures/05_heatmap_iho_sea_all.svg
-#   - results/figures/05_heatmap_temperature_cbb.svg
-#   - results/figures/05_heatmap_salinity_cbb.svg
-#   - results/figures/05_heatmap_depth_cbb.svg
+#   - results/supplementary_tables/MarMAGs_additional_File_02.docx(Fig. S2)
+#   - results/supplementary_tables/MarMAGs_additional_File_02.docx(Fig. S3)
+#   - results/supplementary_tables/MarMAGs_additional_File_02.docx(Fig. S4)
+#   - results/supplementary_tables/MarMAGs_additional_File_02.docx(Fig. S4)
+#   - results/supplementary_tables/MarMAGs_additional_File_02.docx(Fig. S6)
+#   - results/supplementary_tables/MarMAGs_additional_File_02.docx(Fig. S14a)
+#   - results/supplementary_tables/MarMAGs_additional_File_02.docx(Fig. S14b)
+#   - results/supplementary_tables/MarMAGs_additional_File_02.docx(Fig. S14c)
+#   - results/supplementary_tables/MarMAGs_additional_File_02.docx(Fig. S15)
+#   - results/supplementary_tables/MarMAGs_additional_File_02.docx(Fig. S16)
 ################################################################################
 
 suppressPackageStartupMessages({
