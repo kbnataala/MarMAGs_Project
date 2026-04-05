@@ -18,11 +18,9 @@
 #   - results/tables/NTI_sea.csv
 #
 # Expected outputs:
-#   - results/figures/10_forest_std_slopes.svg
-#   - results/figures/10_rank_preservation.svg
-#   - results/figures/10_regression_panels.svg
-#   - results/tables/10_core_regression_standardized.csv
-#   - results/tables/10_rank_preservation.csv
+#   - results/supplementary_tables/MarMAGs_additional_File_04.docx(Fig. S31)
+#   - results/supplementary_tables/MarMAGs_additional_File_04.docx(Fig. S32)
+#   - results/supplementary_tables/MarMAGs_additional_File_04.docx(Fig. S33)
 ################################################################################
 
 suppressPackageStartupMessages({
