@@ -11,15 +11,14 @@
 #   pipeline component.
 #
 # Expected input:
-#   - results/tables/MarMAGs_Dataframe.csv
+#   - path/to/input/table
 #
 # Expected outputs:
-#   - results/figures/04_quality_completeness.svg
-#   - results/figures/04_quality_contamination.svg
-#   - results/figures/04_quality_strain_heterogeneity.svg
-#   - results/figures/04_quality_score.svg
-#   - results/figures/04_quality_combined.png
-#   - results/figures/04_quality_combined.svg
+#   - results/supplementary_tables/MarMAGs_additional_File_02.docx(Fig. S23a)
+#   - results/supplementary_tables/MarMAGs_additional_File_04.docx(Fig. S23b)
+#   - results/supplementary_tables/MarMAGs_additional_File_04.docx(Fig. S23c)
+#   - results/supplementary_tables/MarMAGs_additional_File_04.docx(Fig. S23d)
+#   - results/supplementary_tables/MarMAGs_additional_File_04.docx(Fig. S23)
 ################################################################################
 
 suppressPackageStartupMessages({
