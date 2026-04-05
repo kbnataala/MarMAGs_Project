@@ -169,7 +169,6 @@ Each script:
 
 - operates on specific input table(s)
 - performs its own local input checks
-- writes outputs to `results/tables/` or `results/figures/`
 - can be run independently if the required inputs are available
 
 There is **no required execution order**.
@@ -244,15 +243,17 @@ https://webapp.ufz.de/marmags/
 
 If you use this repository, please cite:
 
-Muhammad, K. N. et al.  
-Habitat filtering constrained by evolutionary history drives the assemblage of carbon-fixing species in marine systems.  
+Muhammad Kabiru Nata’ala, Anderson P. Avila Santos, Jonas Coelho Kasmanas, Eriik Borchert, Jan Zarzycki, Newton C. M. Gomes, Rodrigo Costa, Tina Keller‑Costa, Mirjam perner, Marcel Niklausz, Sabine Kleinsteuber, Ivan A Berg, Tobias J. Erb, André de Carvalho, Peter F. Stadler, Ulisses Rocha*
+
+An analysis of almost 135 thousand metagenome-assembled genomes indicated that habitat filtering constrained by evolutionary history drives the assemblage of carbon-fixing species in marine systems.
+
 [Journal, Year, DOI]
 
 ---
 
 ## License
 
-See `LICENSE` for licensing information.
+GPL-3.0 License.
 
 ---
 
