@@ -18,8 +18,8 @@
 #   - results/figures/MarMAGs_Figure2.pdf (pie_charts_2c)
 #   - results/figures/MarMAGs_Figure2.pdf (ocean_sea_barplot_2b)
 #   - results/figures/MarMAGs_Figure2.pdf (IHO_sea_barplot_2d)
-#   - results/figures/07_Marine_Region.svg
-#   - results/figures/05_territory.svg
+#   - results/supplementary_tables/MarMAGs_additional_File_04.docx(Fig. S20)
+#   - results/supplementary_tables/MarMAGs_additional_File_04.docx(Fig. S21)
 #   - results/figures/MarMAGs_Figure2.pdf (world_map_2a)
 ################################################################################
 
