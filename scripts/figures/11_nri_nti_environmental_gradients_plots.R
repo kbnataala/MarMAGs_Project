@@ -10,13 +10,18 @@
 #   adaptation for local execution.
 #
 # Expected inputs:
-#   - results/tables/<category_table>.csv
-#   - results/tables/<prefix>_paired_t_test_results.csv
-#   - results/tables/<prefix>_independent_t_test_results.csv
+#   - path/to/input/table/<category_table>.csv
+#   - path/to/input/table/<prefix>_paired_t_test_results.csv
+#   - path/to/input/table/<prefix>_independent_t_test_results.csv
 #
 # Expected outputs:
-#   - results/figures/11_<prefix>_nri_nti.svg
-#   - results/figures/11_merged_nri_nti_panels.svg
+#   - results/figures/MarMAGs_Figure6.pdf (heamap_6a)
+#   - results/figures/MarMAGs_Figure6.pdf (heamap_6b)
+#   - results/figures/MarMAGs_Figure6.pdf (heamap_6c)
+#   - results/figures/MarMAGs_Figure6.pdf (heamap_6d)
+#   - results/figures/MarMAGs_Figure6.pdf (heamap_6e)
+#   - results/supplementary_tables/MarMAGs_additional_File_02.docx(Fig. S17)
+#   - results/supplementary_tables/MarMAGs_additional_File_02.docx(Fig. S18)
 ################################################################################
 
 suppressPackageStartupMessages({
