@@ -11,14 +11,12 @@
 #   pipeline component.
 #
 # Expected input:
-#   - results/tables/merged_data.csv
+#   - path/to/input/table
 #
 # Expected outputs:
-#   - results/figures/06_depth_phyla_correlation_heatmap.png
-#   - results/figures/06_salinity_phyla_correlation_heatmap.png
-#   - results/figures/06_temperature_phyla_correlation_heatmap.png
-#   - results/figures/06_all_phyla_correlation_combined.png
-#   - results/figures/06_all_phyla_correlation_combined.svg
+#   - results/supplementary_tables/MarMAGs_additional_File_02.docx(Fig. S7) 
+#   - results/supplementary_tables/MarMAGs_additional_File_02.docx(Fig. S8)
+#   - results/supplementary_tables/MarMAGs_additional_File_02.docx(Fig. S9)
 ################################################################################
 
 suppressPackageStartupMessages({
