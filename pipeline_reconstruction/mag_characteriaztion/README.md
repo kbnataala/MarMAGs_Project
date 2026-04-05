@@ -1,9 +1,6 @@
 ---
 title: "MAG Characterization Pipeline (Reconstruction)"
-output:
-  github_document:
-    toc: true
-    toc_depth: 3
+
 ---
 
 # Overview
