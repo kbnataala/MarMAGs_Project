@@ -41,7 +41,7 @@ export GTDBTK_DATA_PATH=/path/to/gtdb/release220
 MAG genome files:
 
 ```
-data/mags/*.fa
+path/to/mags/folder/*.fa
 ```
 
 All MAG FASTA files must share the same extension (default: `.fa`).
@@ -51,13 +51,13 @@ All MAG FASTA files must share the same extension (default: `.fa`).
 # Step 1 — Genome Quality Assessment (CheckM)
 
 ```bash
-bash 01_run_checkm.sh data/mags results/mag_characterization/checkm 32 fa
+bash 01_run_checkm.sh input/mags/folder checkm/output/result/folder 32 fa
 ```
 
 Output:
 
 ```
-results/mag_characterization/checkm/output_checkm.tsv
+results/folder/mag_characterization/checkm/output_checkm.tsv
 ```
 
 Key columns used:
