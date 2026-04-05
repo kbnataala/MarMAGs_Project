@@ -9,11 +9,10 @@
 #   adaptation for local execution.
 #
 # Expected input:
-#   - results/tables/MarMAGs_Additional_File_01.csv
+#   - path/to/input/table
 #
 # Expected outputs:
-#   - results/figures/03_metadata_missingness.png
-#   - results/figures/03_metadata_missingness.svg
+#   - results/supplementary_tables/MarMAGs_additional_File_04.docx(Fig. S22)
 ################################################################################
 
 suppressPackageStartupMessages({
