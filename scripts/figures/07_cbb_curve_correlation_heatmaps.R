@@ -11,15 +11,9 @@
 #   pipeline component.
 #
 # Expected input:
-#   - results/tables/cbb_data.csv
+#   - path/to/input/table
 #
 # Expected outputs:
-#   - results/tables/temperature_monotonicity_by_phylum.csv
-#   - results/tables/depth_monotonicity_by_phylum.csv
-#   - results/tables/salinity_monotonicity_by_phylum.csv
-#   - results/tables/CBB_temperature_curvecorr_pvalue.csv
-#   - results/tables/CBB_depth_curvecorr_pvalue.csv
-#   - results/tables/CBB_salinity_curvecorr_pvalue.csv
 #   - results/figures/CBB_temperature_curvecorr_heatmap_sigma8.png
 #   - results/figures/CBB_depth_curvecorr_heatmap_sigma8.png
 #   - results/figures/CBB_salinity_curvecorr_heatmap_sigma8.png
