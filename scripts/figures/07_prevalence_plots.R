@@ -3,7 +3,12 @@
 #
 # Purpose:
 #   Documentation template for generating prevalence barplots with significance
-#   annotations (Figure 5 and supplementary figures).
+#   - results/figures/MarMAGs_Figure5.pdf (heamap_5a)
+#   - results/figures/MarMAGs_Figure5.pdf (heamap_5b)
+#   - results/figures/MarMAGs_Figure5.pdf (heamap_5c)
+#   - results/figures/MarMAGs_Figure5.pdf (heamap_5d)
+#   - results/supplementary_tables/MarMAGs_additional_File_02.docx(Fig. S11)
+#   - results/supplementary_tables/MarMAGs_additional_File_02.docx(Fig. S12)
 ################################################################################
 
 suppressPackageStartupMessages({
