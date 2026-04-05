@@ -8,6 +8,8 @@
 # Repository role:
 #   This script is provided as a documentation template and may require
 #   adaptation for local execution.
+
+#   - results/supplementary_tables/MarMAGs_additional_File_02.docx(Fig. S10)
 ################################################################################
 
 suppressPackageStartupMessages({
